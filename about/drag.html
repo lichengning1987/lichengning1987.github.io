@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单拖拽</title>
+	<style type="text/css">
+div,h2,p{margin:0;padding:0;}
+body{font:14px/1.5 arial;}
+#box{width:100px;height:100px;background:#fef4eb;padding:5px;margin:50px;border:1px solid #f60;}
+#box .title{height:25px;background:#f60;}
+#tool{margin-bottom:10px;}	
+
+</style>
+
+</head>
+<body>
+<div class="col-main" style="height:500px;">
+	<h1>简单的拖拽</h1>
+	<div id="box">
+		<h2 class="title"></h2>
+	</div>
+</div>
+	
+<script type="text/javascript">
+	var $=function(id){return typeof id === "string" ? document.getElementById(id):id};
+	var $$=function(tagname,obj){return (obj || document).getElementsByTagName(tagname)};
+	function Drag(drag){
+		this.drag = $(drag);
+		this._x = this._y = 0;
+		this._moveDrag = this.bind(this, this.moveDrag);
+		this._stopDrag = this.bind(this, this.stopDrag);
+		this.maxContainer = document.documentElement || document.body;
+		this.handle=$$('h2',this.drag)[0];
+		this.handle.style.cursor = "move";
+		this.maxTop = Math.max(this.maxContainer.clientHeight, this.maxContainer.scrollHeight) - this.drag.offsetHeight;
+		this.maxLeft = Math.max(this.maxContainer.clientWidth, this.maxContainer.scrollWidth) - this.drag.offsetWidth;
+	}
+	Drag.prototype={
+		init:function(){
+			this.changeLayout();
+			this.addHandler(this.handle, "mousedown", this.bind(this, this.startDrag))	
+		},
+		changeLayout : function ()
+		{
+			this.drag.style.top = this.drag.offsetTop + "px";
+			this.drag.style.left = this.drag.offsetLeft + "px";
+			this.drag.style.position = "absolute";
+			this.drag.style.margin = "0"
+		},
+		startDrag : function (event)
+		{		
+			var event = event || window.event;
+			this._x = event.clientX - this.drag.offsetLeft;
+			this._y = event.clientY - this.drag.offsetTop;
+			
+			this.addHandler(document, "mousemove", this._moveDrag);
+			this.addHandler(document, "mouseup", this._stopDrag);
+			
+			event.preventDefault && event.preventDefault();
+			this.handle.setCapture && this.handle.setCapture();
+		},
+		moveDrag : function (event)
+		{
+			var event = event || window.event;
+			
+			var iTop = event.clientY - this._y;
+			var iLeft = event.clientX - this._x;
+			
+			if (this.lock) return;
+			
+			this.limit && (iTop < 0 && (iTop = 0), iLeft < 0 && (iLeft = 0), iTop > this.maxTop && (iTop = this.maxTop), iLeft > this.maxLeft && (iLeft = this.maxLeft));
+			
+			this.lockY || (this.drag.style.top = iTop + "px");
+			this.lockX || (this.drag.style.left = iLeft + "px");
+			
+			event.preventDefault && event.preventDefault();
+			
+		},
+		stopDrag : function ()
+		{
+			this.removeHandler(document, "mousemove", this._moveDrag);
+			this.removeHandler(document, "mouseup", this._stopDrag);
+			
+			this.handle.releaseCapture && this.handle.releaseCapture();
+		},
+		addHandler : function (oElement, sEventType, fnHandler)
+		{
+			return oElement.addEventListener ? oElement.addEventListener(sEventType, fnHandler, false) : oElement.attachEvent("on" + sEventType, fnHandler)
+		},
+		//删除绑定事件
+		removeHandler : function (oElement, sEventType, fnHandler)
+		{
+			return oElement.removeEventListener ? oElement.removeEventListener(sEventType, fnHandler, false) : oElement.detachEvent("on" + sEventType, fnHandler)
+		},
+		//绑定事件到对象
+		bind : function (object, fnHandler)
+		{
+			return function ()
+			{
+				return fnHandler.apply(object, arguments)	
+			}
+		}	
+	}
+	var oBox=$("box");
+	var oTitle= $$("h2",oBox)[0];
+	var p= new Drag("box")
+	p.init();
+	
+	
+</script>
+
+</body>
+</html>

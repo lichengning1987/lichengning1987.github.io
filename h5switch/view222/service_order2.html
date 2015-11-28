@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>地址管理</title>
+    <meta content="商旅生活手机购物，正品商城，品牌特卖会" name="keywords">
+    <meta content="商旅生活手机购物网以1-7折超低折扣对全球各大品牌进行限时特卖，商城内正品囊括服装、化妆品、家居、奢侈品等。100%正品、手机购物下单、货到付款、7天无条件退货。" name="description">
+    <link href="../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="wrap">
+    <!-- <header id="header" class="header clearfix">
+        <div class="head_left fl"><a href="index.php"><span class="h_back"></span></a></div>
+        <span class="headtit">服务单填写</span>
+        <div class="head_right fr"><a href="index.php"><span class="h_home"></span></a></div>
+    </header> -->
+
+
+    <!--serviceorder begin-->
+    <form action="service.php?act=create" id="serviceOrderForm" method="post">
+        <div class="y-serviceorder">
+            <div class="y-service-title">
+                <p>
+                    <span class="service-title black">&nbsp;退单金额：<em class="pink1">￥60</em></span>
+                </p>
+                <p>
+                    <span class="service-title black">&nbsp;退单理由：</span>
+                    <select name="" id="" class="service-reseon">
+                        <option value="">选择理由</option>
+                        <option value="">选择理由1</option>
+                        <option value="">选择理由2</option>
+                    </select>
+                </p>
+            </div>
+            <!-- <div class="y-service-title">
+                 <span class="pink">*</span>
+                 <span class="service-title black">服务类型：</span>
+                 <input type="hidden" name="order_id" value="<?php /*echo $order_id*/?>"/>
+                 <input type="radio" id="goodsReturn" name="serviceType" value="1" checked="true">
+                 <label for="goodsReturn" class="goods-return">退单</label>
+                 <input type="radio" id="goodsReturn" name="serviceType">
+                 <label for="goodsReturn" class="goods-return">退货</label>
+                 <input type="radio" id="goodsChange" name="serviceType">
+                 <label for="goodsChange">换货</label>
+             </div>-->
+            <div class="mt5 y-service-desc">
+                <span class="pink">*</span>
+                <span class="black">问题描述：</span>
+            </div>
+            <div class="y-desc-textarea mt5"><textarea name="description" id="textareaReason" maxlength="500"></textarea></div>
+            <p>请您如实填写申请原因及商品情况，字数在500字内</p>
+
+            <div class="y-service-upload-pic" style="display:none;">
+
+                <div class="y-upload" style="margin-left:0px;">
+                    <ul class="y-upload-imgs clearfix">
+                    </ul>
+                    <p class="mv10">为了帮助我们更好的解决问题，请您上传图片最多可上传5张图片，每张图片大小不超过5M.支持bmp、gif、jpg、png、jpeg格式</p>
+                    <div class="y-upload-bottom">
+                        <input type="hidden" id="pic_paths" name="pic_paths"/>
+                        <!-- <input id="file_upload" name="file_upload" type="file" multiple="true"> -->
+                        <div id="promptzone" class="y-upload-btn">上传图片</div>
+                    </div>
+
+                </div>
+            </div>
+            <?php if(!(isset($_SERVER['HTTP_USER_AGENT']) && strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger'))):?>
+            <div class="y-service-upload clearfix">
+                <span class="black y-upload-title">图片信息：</span>
+                <span>图片未上传</span>
+                <span class="upload-btn fr"><a class="upload-pic" >添加图片<span class="change-icon"></span></a>
+                </span>
+                <input type="hidden" value="1" id="checkIfUpload">
+            </div>
+            <p class="mt5">上传图片信息有助于我们更好地帮助您处理售后问题</p>
+            <?php endif;?>
+
+            <!-- <div class="y-service-address">
+                <div class="address-img"></div>
+                <div class="mt5 address-info">
+                    <span class="pink">*</span>
+                    <span class="black">收货信息</span>
+                </div>
+                <p>乐乐131****51</p>
+                <p>浙江省杭州市西湖区</p>
+                <p>西斗门路3号天堂软件园A幢19楼昊美科技</p>
+                <a href="" class="change-icon posit"></a>
+            </div> -->
+            <a href="javascript:;" class="y-service-btn" id="serviceOrderSub">提交申请</a>
+        </div>
+    </form>
+    <!--serviceorder end-->
+    <!-- <script src="js/jquery.uploadify.min.js" type="text/javascript" charset="utf-8"></script> -->
+    <script src="js/jquery.ajaxupload.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+
+        jQuery(function ($) {
+            // Set fieldname
+            $.ajaxUploadSettings.name = 'uploads';
+            // Set promptzone
+            $('#promptzone').ajaxUploadPrompt({
+                url : 'uploadify.php',
+                beforeSend : function () {
+                    // 			$('#promptzone, #result').hide();
+                },
+                // 		onprogress : function (e) {
+                // 			if (e.lengthComputable) {
+                // 				var percentComplete = e.loaded / e.total;
+                // 				// Show in progressbar
+                // 				$( "#progressbar" ).progressbar({
+                // 					value: percentComplete*100,
+                // 					complete: function () {
+                // 						$(this).progressbar( "destroy" );
+                // 					}
+                // 				});
+                // 			}
+                // 		},
+                error : function () {
+                },
+                success : function (data) {
+                    obj = $.parseJSON(data);
+                    if(obj.status == 1){
+                        var html = '<li class="fl"><img src="'+obj.path+'" alt="" style="width:66px;height:71px;"></li>';
+                        $('.y-upload-imgs').append(html);
+                    }else{
+                        alert(obj.message);
+                    }
+                }
+            });
+            $("#j_fixLogo").hiMenu();
+
+            $('#j_back').click(function(){
+                window.location.href="index.php";
+                return;
+            });
+        });
+        $('#serviceOrderSub').click(function(){
+            /*if($('[name=serviceType]:checked').length === 0){
+             return alert('请选择服务类型');
+             }*/
+            if($.trim($('#textareaReason').val()) === ''){
+                return alert('请填写问题描述');
+            }
+            str = '[';
+            var count = 0;
+            $('.y-upload-imgs .fl').each(function(index,element) {
+                count ++ ;
+                str += '{"pic_path":"'+$(element).find('img').attr('src')+'"},';
+            });
+            str = str.substring(0,str.length-1) + ']';
+            $('#pic_paths').val(str);
+            if(count > 5){
+                return alert('上传图片请不要超过5张');
+            }
+            //if($.trim($('#checkIfUpload').val()) === ''){
+            //return alert('请上传图片');
+            //}
+            $('#serviceOrderForm').submit();
+        });
+        $('.upload-pic').click(function(){
+            $('.y-service-upload-pic').show();
+            $('.y-service-upload').hide();
+        });
+    </script>
+    <div id="j_fixLogo" class="fix_menu">
+
+    </div>
+    <div id="j_back" class="back_icon">
+
+    </div>
+</div>
+
+</body>
+</html>

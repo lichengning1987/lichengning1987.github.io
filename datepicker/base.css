@@ -1,0 +1,114 @@
+/* CSS Document */
+body{ font-family:Arial,"microsoft yahei",Verdana; padding:0; margin:0; font-size:12px; color:#858585; background:#efeff4; min-width:320px;/*position:relative;*/}
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust:none;}/*阻止转屏时字体变大*/
+html,div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,img,dd,dt,dl,ol{ padding:0; margin:0; border:none;}
+img{ padding:0; margin:0; vertical-align:top; border:none;}
+ul,li{ list-style:none outside none; padding:0; margin:0;}
+h1,h2{color:#404040; font-size:14px;}
+input[type="text"]{-webkit-appearance: none;-moz-appearance: none; margin:0; padding:0; background:none; border:none; font-size:14px; text-indent:3px;}
+input[type="checkbox"]{ margin:0;}
+.wrap{padding-top:0px;overflow: hidden;padding-bottom:20px;}
+a,button,input,span,textarea,div,li{-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(255,0,0,0);margin:0;padding:0;}
+textarea{outline:none;resize: none;-webkit-border-radius:0;}
+em{font-style:normal}
+.l-thought{text-decoration: line-through;}
+
+
+/*清除浮动样式*/
+.clear{ clear:both; height:0; width:100%;}
+.clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+.clearfix{zoom: 1; clear:both;}
+
+/*几种不同间隔的样式*/
+.space5{ height:5px; clear:both;}
+.space10{ height:10px; clear:both;}
+.space15{ height:15px; clear:both;}
+.space20{ height:20px; clear:both;}
+.space30{ height:30px; clear:both;}
+
+/*几种不同的字体样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.d_ib{display:inline-block;}
+a{ text-decoration:none; color:#808080;}
+.border_dashed{border-bottom:1px dotted #ddd; }
+/*引入字体*/
+@font-face{
+    font-family: "SIMYOU";
+    src:url(../images/SIMYOU.TTF) format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/*长度百分比*/
+.w33{width:33%;}
+.w38{width:38%;}
+.w90{width:90%}
+.w100{ width:100%;}
+
+/* padding */
+.pd10{padding:10px;}
+.pd5{padding:5px;}
+.pdbt5{padding-bottom: 5px;}
+.pdbt10{padding-bottom: 10px;}
+.pdtp5{padding-top:5px;}
+.pdtp10{padding-top:10px;}
+.pdtp25{padding-top:25px;}
+/* margin */
+.mt5{margin-top:5px;}
+.mt6{margin-top:6px;}
+.mt10{margin-top:10px;}
+.mt20{margin-top:10px;}
+.mb20{margin-bottom:24px;}
+.mr5{margin-right:5px;}
+.ml5{margin-left:5px;}
+.mr10{margin-right:10px;}
+.mr20{margin-right:20px;}
+.ml10{margin-left:10px;}
+.mv5{margin:5px 0;}
+.mv10{margin:10px 0;}
+.mll0{margin:12px;}
+
+/*font color*/
+.pink{color:#f02387;}
+.pink1{color:#f05769;}
+.pink2{color:#f05769;}
+
+/*font size*/
+.f12{font-size:12px;}
+.f14{font-size:14px;}
+.f15{font-size:15px;}
+.f16{font-size:16px;}
+.f18{font-size:18px;}
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.submit-btn{
+    -webkit-appearance: button;
+    cursor: pointer;
+    *overflow: visible;
+    border-radius:0;
+}/*其他样式*/
+.pl05{ padding-left:5px;}
+.w320{ width:320px; margin:0 auto;}
+.fontred{ color:#f05769}
+.fontgrey,.sfontgrey{ color:#999;}
+.sfontgrey{ font-size:11px;}
+.fontdark{ color:#242424;}
+.fontyellow,.sfontyellow{ color:#eba602;}
+.fontyellow{ text-decoration:underline; font-size:13px;}
+.fontblue{color:#3366CC}
+.gather{ color:#7d5302;}
+.fblod{ font-weight:bold;}
+.font16{ font-size:16px!important;color:#f9339b; font-weight:bold;}
+.font16w{ font-size:16px; }
+.font14{ font-size:14px;}
+.fontstyle{ text-decoration:line-through;}
+.alignc{ text-align:center}
+.aposition{ position:relative}
+.m0a{ margin:0 auto}
+.hide{display:none;}
+.compadding,.p14{ padding:0 8px;}
+.prf05{ padding:0 5px;}
+.pb5{ padding-bottom:5px;}
+.btnone{border-bottom:0;}

@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <link href="http://127.0.0.1/awu/wei/static/css/mobiscroll.custom-2.15.0.min.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<title>啊呜购(试运营)</title>
+<meta content="商旅生活手机购物，正品商城，品牌特卖会" name="keywords">
+<meta content="商旅生活手机购物网以1-7折超低折扣对全球各大品牌进行限时特卖，商城内正品囊括服装、化妆品、家居、奢侈品等。100%正品、手机购物下单、货到付款、7天无条件退货。" name="description">
+<link href="http://172.16.20.138/awu/wei/static/css/base.css" rel="stylesheet" type="text/css" />
+<link href="http://172.16.20.138/awu/wei/static/css/index.css" rel="stylesheet" type="text/css" />
+<link href="http://172.16.20.138/awu/wei/static/css/mobiscroll.custom-2.15.0.min.css" rel="stylesheet" type="text/css" />
+
+<!-- weixin interface -->
+<!-- end -->
+</head>
+<body>
+
+<div class="all">
+	
+	<form id="addressFrom" name="addressForm_" action="" method="POST">
+	<!-- address start -->
+	<input type="hidden" id="section" name="section" value="" />
+	<input type="hidden" id="oldAddress" name="oldAddress" value="" />
+	<input type="hidden" id="gpsAddress" name="gpsAddress" value="" />
+	<input type="hidden" id="area_id" name="area_id" value="0" />
+	<input type="hidden" id="allowDelivery" value="0" />
+	<div class="address">
+		<!-- title start -->
+		<div class="title ">
+			<div class="bb consignee">
+				<h3><span class="h2 gray">收货人</span><b class="h2 black">
+				<input name="consignee" type="text" maxlength="50" class="text_input" value="">
+				</b></h3>
+			</div>
+			<div class="bb consignee">
+				<span class="h2 gray">手机号码</span><b class="h2 black">
+
+				<input id="phone" name="phone_mob" type="tel" value="" maxlength="13" class="text_input">
+
+				</b>
+			</div>
+		</div>
+		<!-- title end -->
+		
+		<!-- box start -->
+		<div class="box box-address-detail bb">
+
+			<div class="wid80">
+				<span class="h2 gray">详细地址</span>
+			</div>
+			<div class="address-detail-wrap">
+				<textarea class="h2 black address-detail" id="address" name="address" placeholder="请输入您的详细地址"></textarea>
+			</div>
+		</div>
+
+        <div class="addresstips">
+            如：亲亲家园三期紫阳坊3幢201室
+        </div>
+
+        <div class="j-addressList" style="display:none;">
+            <ul class="ajaxList">
+                
+            </ul>
+        </div>
+
+		<!-- box end -->
+		<div class="order-white backgroundnone">
+            <button class="btn submitBtn" >确定</button>
+			<!--<input type="button" class="btn submitBtn"  value="确定">-->
+		</div>
+
+
+	</div>
+	</form>
+	<!-- address end -->
+</div>
+
+<!-- script start -->
+<script src="http://172.16.20.138/awu/wei/static/js/jquery-old.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://172.16.20.138/awu/wei/static/js/module/global.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://172.16.20.138/awu/wei/static/js/plug/mobiscroll.custom-2.15.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://172.16.20.138/awu/wei/static/js/module/address.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- script end -->
+<script type="text/javascript">
+var operateUrl = 'address.php?act=insert';
+var getCityUrl = "address.php?act=get_city";
+var getAreaUrl = "address.php?act=get_area";
+var getLocalGpsUrl = "address.php?act=localGps";
+var getDistinctInfoUrl = "address.php?act=getDistinctInfo";
+var getGeoUrl = "address.php?act=getGeo";
+var saveLocationUrl = "address.php?act=saveLocationCookie";
+var defaultUrl = "address.php?act=set_default";
+var getNextUrl = "address.php?act=getNext";
+var checkDeliveryUrl = "address.php?act=checkDelivery";
+var getAdviceUrl = "address.php?act=getAddressAdvice";
+var getSearchUrl = "address.php?act=getSearchLoaction";
+
+var allowDelivery = {"330102":"\u4e0a\u57ce\u533a","330103":"\u4e0b\u57ce\u533a","330105":"\u62f1\u5885\u533a","330106":"\u897f\u6e56\u533a","330108":"\u6ee8\u6c5f\u533a","330109":"\u8427\u5c71\u533a","330110":"\u4f59\u676d\u533a","330104":"\u6c5f\u5e72\u533a"};
+var baseUrl = 'http://127.0.0.1/awu/wei/';
+var addressType = 'add';
+
+</script>
+</body>
+</html>

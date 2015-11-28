@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>日历插件</title>
+	<link rel="stylesheet" href="/datepicker/base.css">
+	<link rel="stylesheet" href="/datepicker/datepicker.css">
+	<style type="text/css">
+		.hotel-icon-btn, .hotel-address-icon, .arrow-icon, .hotelWrap h3 .icon, .dateIcon, .hotel-styleicon {
+		    background: url("/datepicker/spritsDetail.png") no-repeat;
+		    width: 20px;
+		    height: 20px;
+		    display: inline-block;
+		    vertical-align: middle;
+		    background-size: 300px;
+		}
+		.hotelWrap{margin:10px;background:#fff;}
+		.hotelWrap .hotel-dataTime{background:#f6d8df;border: 1px solid #f4c9cd;height:66px;position:relative;}
+		.hotelWrap .hotel-dataTime dl{float:left;}
+		.hotelWrap .hotel-dataTime .date-daylist{width:41%;}
+		.hotelWrap .hotel-dataTime .date-datelist{width:59%;}
+		.hotelWrap .hotel-dataTime dt{float:left;margin: 15px 0 0 10px;}
+		.hotelWrap .hotel-dataTime dd{margin: 12px 0 0 45px;}
+		.hotelWrap .hotel-dataTime dd span{color:#747272;display:block;line-height: 20px;}
+		.hotelWrap .hotel-dataTime dd span em{font-size:16px;color:#4f4f4f;}
+		.hotelWrap .hotel-dataTime dt .dateIcon{background-position:-28px -35px;display:block;}
+		.hotelWrap .hotel-dataTime dt .dateIcon-day{background-position:-59px -35px;}
+		.hotelWrap .hotel-dataTime dd.date-day span{margin-top:22px;}
+		.hotelWrap .hotel-bedlist li{position:relative;padding: 10px;border: 1px solid #ddd;border-top: none;}
+		.hotelWrap .hotel-bedlist-img{width:75px;height:70px;display:block;overflow: hidden;}
+		.hotelWrap .hotel-bedlist-img img{width:100%;height:auto;}
+		.hotelWrap .hotel-bedlist-info{margin:0px 85px 0 85px;}
+		.hotelWrap .hotel-bedlist-info h4{line-height: 15px;}
+		.hotelWrap .hotel-bedlist-info p{line-height: 20px;}
+		.hotelWrap .hotel-bedlist-info .price{color:#f05769;font-size:16px;position:absolute;top:10px;right:10px;}
+		.hotelWrap .hotel-bedlist-info .price del{font-size:12px;color:#8b8a8a;}
+		.hotelWrap .hotel-bedlist-info .grouprice{color:#f05769;font-size:16px;position:absolute;top:50%;margin-top:-10px;right:25px;}
+		.hotelWrap .hotel-bedlist-info .hotel-buy{width:94px;height:38px;text-align:center;line-height:38px;display:block;color:#fff;position:absolute;right:10px;bottom:10px;font-size:14px;}
+		.hotelWrap .hotel-bedlist-info .hotel-buy.buyBtn{background: #f05769;border:1px solid #e41717;}
+		.hotelWrap .hotel-bedlist-info .hotel-buy.disableBtn{background:#BCBCBC;border:1px solid #BCBCBC;}
+
+		.hotelWrap h3{border: 1px solid #ddd;height:48px;line-height: 48px;}
+		.hotelWrap h3 .icon{background-position:-94px -35px;width:25px;margin-left:10px;}
+		.icon-money{font-size:12px;}
+		.hotel-bedlist-img{position:relative;}
+		.hotel-styleicon{background-position:-158px -35px;position:absolute;left:0px;top:0px;}
+		.hotel-styleicon-t{background-position:-185px -35px;}
+		
+		.arrow-icon {
+		    background-position: -127px -35px;
+		}
+		.arrwo-icon-l2 {
+		    position: absolute;
+		    right: 0px;
+		    top: 50%;
+		    margin-top: -10px;
+		}
+		h3{
+			margin:10px 0 0 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<h3>
+		点击红色区域弹出日历
+	</h3>
+	<div class="hotelWrap">
+		<div class="hotel-dataTime clbtn">
+			
+		</div>
+	</div>
+	<script src="/datepicker/jquery-2.1.3.min.js"></script>
+	<script src="/datepicker/datapicker.js"></script>
+	<script>
+	$(function(){
+		var date = [2015,11,15],day = 3;
+		$(".clbtn").datepicker({
+/*			"dateYear":parseInt(date[0]), //服务器时间--当前年
+			"dateMonth":parseInt(date[1]),//服务器时间--当前月
+			"dateDay":parseInt(date[2]), //服务器时间--当前日*/
+			"day":day //住几天
+		});
+
+	})
+	</script>
+</body>
+</html>

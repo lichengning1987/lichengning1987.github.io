@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<title>啊呜购(试运营)</title>
+<meta content="商旅生活手机购物，正品商城，品牌特卖会" name="keywords">
+<meta content="商旅生活手机购物网以1-7折超低折扣对全球各大品牌进行限时特卖，商城内正品囊括服装、化妆品、家居、奢侈品等。100%正品、手机购物下单、货到付款、7天无条件退货。" name="description">
+<link href="../css/base.css" rel="stylesheet" type="text/css" />
+<link href="../css/index.css" rel="stylesheet" type="text/css" />
+<!-- weixin interface -->
+<!-- end --></head>
+<body>
+
+	<!-- pay start -->
+	<form id="addExtr" name="addExtr" method="post" action="order.php?act=addExtr" class="check_form">
+	<div class="pay">
+	<input type="hidden" name="payment" id="payment_id" value="2" />
+	<input type="hidden" name="use_id" id="use_id" value="0" />
+	<input type="hidden" name="integral" id="integral" value="0.00" />
+	<input type="hidden" name="integral_discount" id="integral_discount" value="0.00" />
+	<input type="hidden" name="group_id" value="394" />
+	
+	<input type="hidden" id="totalAmount" value="100.01" />
+
+		<div class="order" style="overflow-x: initial;">
+        <div class="orderpayBox">
+            <h2 class="paytitle">
+                商品总价
+            </h2>
+            <p class="orderpayprice">
+                ￥100.01            </p>
+        </div>
+		<div class="order-lists">
+            <div class="list list2  choose-card bdnone">
+			    <p>抵价券</p>
+                <span class="price">-￥<em class="couponSpan">0.00</em></span>
+			    <a class="next" href="#"></a>
+		    </div>
+		    <div class="list list2" data-discount="5" 
+		    	data-value="600"
+		    	data-enable="">
+		    	<p><span class="j-jfinfo">积分<i class="jf-info"></i></span></p>
+                 <div class="jf-Box">
+                    <span class="use-jf"><em>使用600积分抵扣5元</em></span>
+                    <span class="has-jf">现有积分<em>100.01</em></span>
+                 </div>
+                 <a class="jf-btn " href="javascript:void(0)"></a>
+		    </div>
+             <!-- div class="list list2  choose-scoreBtn">
+			    <p>积分</p>
+                <span class="price">-￥<em class="integralSpan">0.00</em></span>
+			    <a class="next" href="#"></a>
+		    </div -->
+		</div>
+
+		<div class="order-white text-center checkout-btbox">
+          
+          <!--
+            <span class="checkout-totalprice">应付:<em class="orange">￥100.01</em></span>
+            <span class="choosepay choose-pay-style">
+                <em>支付宝支付</em><i></i>
+            </span>
+			<a href="javascript:void(0)" class="submitBtn">去付款</a>
+			-->
+			
+			<ul class="paylist">
+            	                                 <li class="zfb-item  select">
+                    <i class="zfb-icon pay-icon"></i><span>支付宝</span>
+                </li>
+                                                               <li class="hd-item  ">
+                    <i class="hd-icon pay-icon"></i><span>货到付款</span>
+                </li>
+                                          </ul>
+         
+			<a href="javascript:void(0)" class="submitBtn orangebg">付款：<em>￥100.01</em></a>
+		</div>
+	</div>
+		
+
+
+	<!-- pay end -->
+	
+	
+
+</div>
+</form>
+
+
+<!-- price-choose start -->
+<div class="price-choose">
+	<div class="">
+		<div class="col-20 col bb choosejf">100积分（抵扣1元）</div>
+		<div class="col-20 col bb choosejf">200积分（抵扣2元）</div>
+		<div class="col-20 col bb choosejf">300积分（抵扣3元）</div>
+		<div class="col-20 col bb choosejf">400积分（抵扣4元）</div>
+		<div class="col-20 col choosejf">500积分（抵扣5元）</div>
+	</div>
+</div>
+<!-- price-choose end -->
+
+<!--div class="btm-btn-wrap">
+	<a href="javascript:void(0);" class="btn submit submitBtn orangebg">确定</a>
+</div-->
+
+<!-- script start -->
+<script src="http://tawu.hslvv.com/static/js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://tawu.hslvv.com/static/js/module/global.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://tawu.hslvv.com/static/js/plug/jquery.select.v2.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://tawu.hslvv.com/static/js/plug/mobiscroll.custom.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://tawu.hslvv.com/static/js/module/pay.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://tawu.hslvv.com/static/js/module/wxPay.js" type="text/javascript" charset="utf-8"></script>
+<!-- script end -->
+
+<script>
+var submitUrl = "order.php?act=addExtrJson";
+var getWxPayContentUrl = 'wxPay.php?act=getJsApiParam';
+
+var paymentJson = [{"value":2,"name":"\u652f\u4ed8\u5b9d\u652f\u4ed8"},{"value":100,"name":"\u8d27\u5230\u4ed8\u6b3e"}];
+var couponJson = null;
+var integralJson = [{"name":100.01,"value":100.01,"discount":"5.00","text":"100.01\u79ef\u5206\u62b5\u6263\u4e3a5.00\u5143","enable":true},{"name":1000,"value":1000,"discount":10,"text":"1000\u79ef\u5206\u62b5\u6263\u4e3a10\u5143","enable":false},{"name":1900,"value":1900,"discount":20,"text":"1900\u79ef\u5206\u62b5\u6263\u4e3a20\u5143","enable":false},{"name":4500,"value":4500,"discount":50,"text":"4500\u79ef\u5206\u62b5\u6263\u4e3a50\u5143","enable":false},{"name":8000,"value":8000,"discount":100,"text":"8000\u79ef\u5206\u62b5\u6263\u4e3a100\u5143","enable":false}];
+var changeReal = '0.01';
+var userIntegral = '100.01';
+var paymentSelect = '2';
+var couponSelect = '0';
+var integralSelect = '0.00';
+var calCoupon = '0';
+var calIntegral = '0.00';
+</script>
+</body>
+</html>

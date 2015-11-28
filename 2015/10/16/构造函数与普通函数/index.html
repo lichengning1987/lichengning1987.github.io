@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>构造函数与普通函数 | Mr.Li的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是构造函数？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构造函数与普通函数">
+<meta property="og:url" content="http://yoursite.com/2015/10/16/构造函数与普通函数/index.html">
+<meta property="og:site_name" content="Mr.Li的博客">
+<meta property="og:description" content="什么是构造函数？">
+<meta property="og:updated_time" content="2015-11-28T14:06:10.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="构造函数与普通函数">
+<meta name="twitter:description" content="什么是构造函数？">
+  
+    <link rel="alternative" href="/atom.xml" title="Mr.Li的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/hdtp_05.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Mr.Li</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">前端效果库</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/web前端/" style="font-size: 10px;">web前端</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Mr.Li</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/hdtp_05.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Mr.Li</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">前端效果库</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-构造函数与普通函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/16/构造函数与普通函数/" class="article-date">
+  	<time datetime="2015-10-16T07:41:49.000Z" itemprop="datePublished">2015-10-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      构造函数与普通函数
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么是构造函数？<br><a id="more"></a><br>百度词条的说法是：<br>构造函数 ，是一种特殊的方法。主要用来在创建对象时初始化对象， 即为对象成员变量赋初始值，总与new运算符一起使用在创建对象的语句中。特别的一个类可以有多个构造函数 ，可根据其参数个数的不同或参数类型的不同来区分它们 即构造函数的重载。<br>所谓的“构造函数”，其实就是一个普通函数，函数内部使用this变量，当对函数使用new运算符时，就是创建了一个函数对象（也叫对象的实例化），并且this指向实例对象上。<br>new 运算符主要做了什么呢？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">obj._proto_ = co.prototype;</span><br><span class="line">co.call(obj);</span><br><span class="line"><span class="built_in">return</span> obj;</span><br></pre></td></tr></table></figure></p>
+<p>第一行，创建一个空对象A,<br>第二行，将空对象的<em>proto</em>指向了构造函数的prototype成员对象，就是将A对象的原型对象设置为构造函数prototype属性引用的那个原型对象。<br>第三行，将构造函数的作用域给新对象，构造函数中的this指向新对象，在调用函数<br>第四行，返回新对象。</p>
+<p>注意的是：一个函数要作为真正构造函数要满足一下2点：<br>1.在函数内部对新对象（this）进行添加属性和方法。<br>2.可以有返回语句return语句(一般情况下是没有返回值的)，但返回值必须是this，或者其他非对象类型的值。也就是说返回值是常规意义上的值类型（Number,String,Boolean）时，new函数才会返回一个该函数的实例对象，而如果函数返回语句返回一个引用类型（Object,Array,Function）,则new函数返回的结果就是return语句的结果于直接调用普通函数产生的结果一样。<br>引用类型通常叫做类，遇到引用值时，所处理的就是对象。<br>看下面1个例子<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> person(name,age)&#123;</span><br><span class="line">	this.age = age;</span><br><span class="line">	<span class="built_in">return</span> &#123;</span><br><span class="line">		name : name,</span><br><span class="line">		age : age</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var p1 = new person(<span class="string">"hello"</span>,<span class="number">22</span>); //返回&#123;name:<span class="string">"hello"</span>,age:<span class="number">22</span>&#125;</span><br><span class="line">person(<span class="string">"hello"</span>,<span class="number">22</span>);//返回&#123;name:<span class="string">"hello"</span>,age:<span class="number">22</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>看这个例子，满足第一个条件，有this属性，但是因为返回值不是常规值类型，是一个对象，那么第二步空对象的proto指向构造函数的prototype,而此时构造函数的prototype原型就是返回对象的原型，那么也就返回该对象，如果是常规值类型则会被忽略。常规值类型没有原型prototype<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> person(name,age)&#123;</span><br><span class="line">	this.age = age;</span><br><span class="line">	<span class="built_in">return</span> age</span><br><span class="line">&#125;</span><br><span class="line">var p1 = new person(<span class="string">"hello"</span>,<span class="number">22</span>); //返回person对象&#123;age: <span class="number">22</span>&#125;</span><br><span class="line">person(<span class="string">"hello"</span>,<span class="number">28</span>);//返回<span class="number">28</span></span><br></pre></td></tr></table></figure></p>
+<p>这个例子，返回值是常规值类型，那么new的时候会被忽略。</p>
+<p>使用构造函数，主要是使用构造函数的原型prototype。在面向对象中尤为重要。<br>函数有constructor和prototype属性，函数定义的时候会有一个默认的prototype属性，而构造函数即用new运算符生成的对象则没有prototype属性，其中函数的prototype包含2个属性，一个是constructor,一个是<strong>proto</strong>,其中constructor属性来测试对象的类型,constructor始终指向创建当前对象的构造函数。</p>
+<h3 id="typeof，instanceof,_constructor的区别">typeof，instanceof, constructor的区别</h3><p>typeof，是一个运算符，运算中需要一个操作数，<br>运算的结果就是这个操作数的类型，运算的结果是一个字符串。<br>他有一定的局限性，对于对象类型的值，只能得到一个”object”结果，却不能精确得到此值的精确类型。<br>示例：typeof ‘hello’ //得到”string”<br>instanceof，也是一个运算符，运算中需要两个操作数，instanceof则为判断一个对象是否为某一数据类型，或一个变量是否为一个对象的实例;<br>运算的结果是true或false，表示此值是不是某一个类的示例，能得到一个值的具体类型。<br>示例：function User(){}  var u=newUser;  console.log( u instanceof User );//true<br>constructor是对象的一个属性，不是运算符，constructor属性指向对象的构造函数。constructor属性来测试对象的类型，运算结果就是对象的类型。<br>示例：function User(){}  var u=newUser;  console.log( u.constructor===User);//得到true</p>
+<p>看下面2种写法：constructor和prototype<br>第一种：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Person(name) &#123;</span><br><span class="line">       this.name = name;</span><br><span class="line">   &#125;;</span><br><span class="line">   Person.prototype.getName = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">       <span class="built_in">return</span> this.name;</span><br><span class="line">   &#125;;</span><br><span class="line">   var p = new Person(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line">   console.log(p.constructor === Person);  // <span class="literal">true</span></span><br><span class="line">   console.log(Person.prototype.constructor === Person); // <span class="literal">true</span></span><br><span class="line">   // 将上两行代码合并就得到如下结果</span><br><span class="line">   console.log(p.constructor.prototype.constructor === Person); // <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>第2种：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Person(name) &#123;</span><br><span class="line">       this.name = name;</span><br><span class="line">   &#125;;</span><br><span class="line">   Person.prototype = &#123;</span><br><span class="line">       getName: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">           <span class="built_in">return</span> this.name;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;;</span><br><span class="line">   var p = new Person(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line">   console.log(p.constructor === Person);  // <span class="literal">false</span></span><br><span class="line">   console.log(Person.prototype.constructor === Person); // <span class="literal">false</span></span><br><span class="line">   // 将上两行代码合并就得到如下结果</span><br><span class="line">   console.log(p.constructor.prototype.constructor === Person); // <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<p>看结果你发现如果是调用p.getName()得到的结果是一样的，感觉上好像2中写法是等价的，根据上面2个对比,查看对象的constructor我们知道其实2种写法不是等价的。<br>第一个只是对Person.prototype添加一个getName方法，其函数对象本身还是Person，所以Person.prototype.constructor === Person<br>第二个Person.prototype的写法等价于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype = new Object(&#123;</span><br><span class="line">           getName: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">               <span class="built_in">return</span> this.name;</span><br><span class="line">           &#125;</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>相当于新建了一个Object对象，而constructor始终指向创建自身的构造函数，所以此时Person.prototype.constructor === Object，<br>即第二种写法的结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(p.constructor === Object);  // <span class="literal">true</span></span><br><span class="line">   console.log(Person.prototype.constructor === Object); // <span class="literal">true</span></span><br><span class="line">   console.log(p.constructor.prototype.constructor === Object); // <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>如何修改呢？只要重新覆盖Person.prototype.constructor即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Person(name) &#123;</span><br><span class="line">           this.name = name;</span><br><span class="line">       &#125;;</span><br><span class="line">   Person.prototype = &#123;</span><br><span class="line">       getName: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">           <span class="built_in">return</span> this.name;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   Person.prototype.constructor = Person;</span><br><span class="line">   var p = new Person(<span class="string">"hello"</span>);</span><br><span class="line">   console.log(p.constructor === Person);  // <span class="literal">true</span></span><br><span class="line">   console.log(Person.prototype.constructor === Person); // <span class="literal">true</span></span><br><span class="line">   console.log(p.constructor.prototype.constructor === Person); // <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>当涉及到继承的时候，情况有点复杂<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f</span></span>() &#123; this.foo = <span class="number">1</span>;&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">s</span></span>() &#123; this.bar = <span class="number">2</span>; &#125;</span><br><span class="line">s.prototype = new f(); // s继承自f</span><br><span class="line">var son = new s(); // 用构造函数s创建一个子类对象</span><br><span class="line">(son.constructor == s); // <span class="literal">false</span></span><br><span class="line">(son.constructor == f); // <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>总结下，constructor到底有什么作用？<br>constructor是为了找到当前创建对象的构造函数，可以用来检测对象类型，也可以用来拓展对象，通过实例对象a.constructor.prototype去修改和扩展原型对象。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="built_in">test</span>A(age)&#123;</span><br><span class="line">	this.a = age;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">test</span>A.prototype.log = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">   	console.log(this.a)</span><br><span class="line">   &#125;	</span><br><span class="line">   a = new <span class="built_in">test</span>A(<span class="number">22</span>);</span><br><span class="line">   //a是实例化对象，比如这是一个插件，实例化后得到的对象，你想拓展插件的方法，那么就可以通过a.constructor.prototype来实现。这里因为a是实例化对象（a.prototype是undefined）,所以想要拓展对象的方法只能通过a.constructor先得到构造函数，然后通过prototype来修改和扩展。</span><br><span class="line">a.constructor.prototype.getName = <span class="function"><span class="title">function</span></span>()&#123; console.log(<span class="string">"hello"</span>)&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在继承的时候,容易出现继承链的紊乱，需要我们手动纠正，可以使用constructor修改，即使是替换了prototype对象，o.prototype = {};那么下一步必然是为新的prototype对象加上constructor属性，并将这个属性指回原来的构造函数。o.prototype.constructor = o;</p>
+<p>下面就来说说，构造函数的prototype属性，一般来说，使用构造函数都要使用prototype,为什么呢？<br>因为如果单纯只是使用构造函数的话，存在一个内存浪费的问题，每次实例化一个对象，就多占用了一个内存地址，这样做缺乏效率，<br>而prototype属性的出现就解决了每次实例化多占用内存地址的问题，因为每一个函数都有一个prototype属性，指向另一个对象，这个对象的所有属性和方法，都会被构造函数的实例继承，意味着我们把那些不变得属性和方法，定义在prototype对象上，每次实例化之后，所有实例对象定义的属性和方法，都是同一个内存地址，都指向prototype对象，因此就提高了效率，减少了内存的占有率。<br>主要写法就是2种<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/////第一种写法</span><br><span class="line"><span class="keyword">function</span> <span class="built_in">test</span>A(age)&#123;</span><br><span class="line">	this.a = age;</span><br><span class="line">&#125;	</span><br><span class="line"><span class="built_in">test</span>A.prototype.getAge = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	console.log(this.a);</span><br><span class="line">&#125;	</span><br><span class="line">var a = new <span class="built_in">test</span>A(<span class="number">22</span>);</span><br><span class="line">===========================</span><br><span class="line">/////第二种写法</span><br><span class="line"><span class="keyword">function</span> <span class="built_in">test</span>A(age)&#123;</span><br><span class="line">	this.a = age;</span><br><span class="line">&#125;	</span><br><span class="line"><span class="built_in">test</span>A.prototype = &#123;</span><br><span class="line">	constructor: <span class="built_in">test</span>A,</span><br><span class="line">	getAge: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		console.log(this.a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var a = new <span class="built_in">test</span>A(<span class="number">22</span>);</span><br></pre></td></tr></table></figure></p>
+<p>关于面向对象的继承推荐看阮一峰博客,里面讲的浅显易懂。</p>
+<h3 id="参考">参考</h3><p><a href="http://www.2cto.com/kf/201402/281841.html" target="_blank" rel="external">深入理解JS构造函数</a><br><a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html" target="_blank" rel="external">Javascript 面向对象编程</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/28/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          开博了
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/30/移动前端开发笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动前端开发笔记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="构造函数与普通函数" data-title="构造函数与普通函数" data-url="http://yoursite.com/2015/10/16/构造函数与普通函数/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"tengjs"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Mr.Li
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

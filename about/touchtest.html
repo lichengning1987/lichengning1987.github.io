@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>touchtest</title>
+	<style>
+		/* CSS reset */
+		body{ font-family:Arial,"microsoft yahei",Verdana; padding:0; margin:0; font-size:12px; color:#858585; background:#efeff4; min-width:320px;}
+		html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust:none;}/*阻止转屏时字体变大*/
+		html,div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,img,dd,dt,dl,ol{ padding:0; margin:0; border:none;}
+		img{ padding:0; margin:0; vertical-align:top; border:none;}
+		ul,li{ list-style:none outside none; padding:0; margin:0;}
+		h1,h2{color:#404040; font-size:14px;}
+		input[type="text"],input[type="number"],input[type="tel"],input[type="button"],input[type="submit"]{-webkit-appearance: none;-moz-appearance: none; margin:0; padding:0; background:none; border:none; font-size:14px; text-indent:3px; color: #666;}
+		input[type="checkbox"]{ margin:0;}
+		a,button,input,span,textarea,div,li{-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(255,0,0,0);margin:0;padding:0;}
+		textarea{outline:none;resize: none;-webkit-border-radius:0;}
+		em{font-style:normal}
+		/*移除input的类型为number的时候数显都是上下箭头*/
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button{
+		    -webkit-appearance: none !important;
+		    margin: 0; 
+		}
+		body,html{width:100%;height:100%;-webkit-touch-callout:none;}
+
+		.clear{ clear:both; height:0; width:100%;}
+		.clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+		.clearfix{zoom: 1; clear:both;}
+
+		p{font-size:36px;}
+	</style>
+
+
+</head>
+<body>
+
+<p id="inp">
+	在手机端看或者模拟器测试touchtest
+</p>
+<script src="/cartAnim/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#inp").on("touchstart",function(e){
+			$("#inp").html("Touch started (" + event.originalEvent.touches[0].clientX + "," + event.originalEvent.touches[0].clientY + ")");
+		})
+		$("#inp").on("touchmove",function(e){
+			$("#inp").html("Touch moved (" + event.originalEvent.touches[0].clientX + "," + event.originalEvent.touches[0].clientY + ")");
+		})
+		$("#inp").on("touchend",function(e){
+			$("#inp").html("Touch end (" + event.originalEvent.changedTouches[0].clientX + "," + event.originalEvent.changedTouches[0].clientY + ")");
+		})
+	})
+
+</script>
+
+</body>
+</html>

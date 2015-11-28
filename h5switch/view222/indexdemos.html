@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--css-->
+    <style type="text/css">
+        *{margin:0;}
+        a,button,input,span,textarea,div,li{-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(255,0,0,0);margin:0;padding:0;}
+        p{border:1px solid #000;line-height: 50px;}
+        #wrapper{
+            width: 100%;
+
+            background: #aaa;
+            position: absolute;
+            /*left: 0px;*/
+            top: 0px;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        .warp{
+            /* -webkit-transition: transform 400ms ease;
+            -moz-transition: transform 400ms ease;
+            transition: transform 400ms ease;*/
+            transform-origin: 0px 0px 0px;
+        }
+
+        .carousel{
+            height:40px;width:100%;background:red;color:#fff;text-align: center;
+        }
+
+          /*transform动画*/
+        .transform {
+            -webkit-transition: -webkit-transform 0.3s ease;
+            transition: transform 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div class="warp transform">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+            <p>7</p>
+
+            <p>8</p>
+
+            <p>9</p>
+
+            <p>10</p>
+
+            <p>11</p>
+
+            <p>12</p>
+
+            <p>13</p>
+
+            <p>14</p>
+
+            <p>15</p>
+
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+            <p>16</p>
+
+            <!--<div class="carousel" style="">
+                下啦内容有惊喜哦
+            </div>-->
+        </div>
+
+    </div>
+
+
+
+    <script src="../js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery.mobile-events.min.js" type="text/javascript" charset="utf-8"></script>
+    <!--主代码-->
+    <script type="text/javascript">
+
+
+
+        $(function(){
+            var opullbar={};
+            var startX = 0,startY = 0,swipSpanX = 0,swipSpanY = 0,obool=true,swiplen = 0,oswip=0,otransiton=0;
+            opullbar.init=function(){
+
+                                $(".warp").on("touchstart",function(e){
+                                          e.preventDefault();
+                                          e.stopPropagation();
+                                          //记录触摸开始位置
+                                           startX = e.originalEvent.targetTouches[0].pageX;
+                                           startY = e.originalEvent.targetTouches[0].pageY;
+                                          var transition='transform '+ 0 + 'ms ease';
+
+                                        /* $(".warp").css({
+                                             'transition':transition,
+                                             '-webkit-transition':transition
+
+                                         })*/
+                                        $(".warp").removeClass("transform");
+
+                                         if($(".carousel").length==0){
+                                               var osdemo='<div class="carousel"> 下啦内容有惊喜哦</div>';
+                                               $(".warp").append(osdemo);
+                                         }
+
+                                 })
+                                $(".warp").on("tapmove",function(e){
+
+                                     swipSpanX = e.originalEvent.targetTouches[0].pageX-startX;
+                                     swipSpanY = e.originalEvent.targetTouches[0].pageY-startY;
+
+                                         oswip = swiplen+swipSpanY;
+
+                                         otransiton=Math.abs(4*swipSpanY);
+                                         var transition='transform '+ otransiton + 'ms ease';
+                                         $(".warp").css({
+                                             'transition':transition,
+                                             '-webkit-transition':transition
+
+                                         });
+
+
+
+                                         if(swipSpanY<0){
+                                             e.preventDefault();
+                                             e.stopPropagation();
+                                             var transform = 'translate(0px, '+oswip +'px) scale(1) translateZ(0px)';
+                                             $('.warp').css({
+                                                 '-webkit-transform': transform,
+                                                 'transform': transform
+                                             });
+
+                                         }else{
+
+                                            if(oswip< 0){
+                                                  var transform = 'translate(0px, '+oswip +'px) scale(1) translateZ(0px)';
+                                                 $('.warp').css({
+                                                     '-webkit-transform': transform,
+                                                     'transform': transform
+                                                 });
+                                            }else{
+                                                oswip = 0;
+                                                  var transform = 'translate(0px, '+oswip +'px) scale(1) translateZ(0px)';
+                                                 $('.warp').css({
+                                                     '-webkit-transform': transform,
+                                                     'transform': transform
+                                                 });
+                                            }
+                                         }
+
+                                  })
+                                $(".warp").on("tapend",function(e){
+                                     //e.preventDefault();
+                                     //e.stopPropagation();
+                                     //根据上啦高度判断动作
+                                    swiplen=oswip;
+
+                                    $(".warp").addClass("transform");
+
+                                    console.log(swiplen)
+                                    var transform = 'translate(0px, '+swiplen +'px) scale(1) translateZ(0px)';
+                                                 $('.warp').css({
+                                                     '-webkit-transform': transform,
+                                                     'transform': transform
+                                                 });
+
+                                    if(swipSpanY<0){
+                                        /* if(Math.abs(swipSpanY)>150){
+
+                                         }else{
+                                             var transform = 'translate3d(' + ( '0,0px,0') + ')';
+                                             $('.warp').addClass("transform").css({
+                                                 '-webkit-transform': transform,
+                                                 'transform': transform
+                                             });
+                                             setTimeout(function(){
+                                                 $(".carousel").remove();
+                                                 $('.warp').removeClass("transform").removeAttr("style");
+                                             },300)
+                                         }*/
+                                    }else{
+
+                                        console.log(swipSpanY,"up2222")
+                                    }
+                                })
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+            opullbar.init();
+
+
+
+        })
+
+
+
+    </script>
+</body>
+</html>
